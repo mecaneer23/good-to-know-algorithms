@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """A couple different ways to rotate a matrix 90 degrees clockwise"""
 
-from typing import TypeVar
+from typing import Any, TypeVar
 
 T = TypeVar("T")
 
 
-def print_matrix(matrix: list[list[int]]) -> None:
+def print_matrix(matrix: list[list[Any]]) -> None:
     """Print out a 2d list (matrix)"""
     for row in matrix:
         for value in row:
@@ -20,6 +20,9 @@ def just_loops(matrix: list[list[int]]) -> list[list[int]]:
     Other than generating the 2d new_matrix pythonically,
     this function uses an algorithm which should be viable
     in any procedural language.
+
+    Uses int because there is no way to get a default of
+    type T in python yet.
     """
     new_matrix: list[list[int]] = [[0 for _ in range(len(matrix))] for _ in range(len(matrix[0]))]
     for row_ptr, row in enumerate(matrix):
